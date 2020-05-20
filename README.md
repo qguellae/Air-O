@@ -1,3 +1,4 @@
 # Air_o
 
-Salut ça farte
+Bienvenue sur le repository du projet Air'O. Ce projet a été réalisé par 6 étudiants de l'INSA Rennes en 4ème année, spécialité 
+Systèmes et Réseaux de Communication.
