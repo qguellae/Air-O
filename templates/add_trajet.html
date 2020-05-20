@@ -1,0 +1,12 @@
+{% extends 'layout.html' %}
+{% block body %}
+
+  <h1>Créer un trajet</h1>
+  <form action="" method="POST">
+    <div class="form-group">
+      <label>Nom du trajet</label>
+      <input type="text" name="name" class="form-control" value={{request.form.name}}>
+    </div>
+    <button type="submit" class="btn btn-primary custom-validationfondblanc">Créer</button>
+  </form>
+{% endblock %}

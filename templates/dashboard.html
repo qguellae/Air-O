@@ -1,0 +1,83 @@
+{%extends 'layout.html' %}
+
+{% block body %}
+	<div class="jumbotron text-center custom-message typo">
+        <h3>BIENVENUE <small>{{session.username}}</small> SUR TON DASHBOARD AIR'O</h3>
+	</div>
+	<div class="custom-primary"><font color="#9D7D76">
+		<h3>Mesure du {{capteur1.date}} à {{capteur1.time}} </h3>
+		<h3>capteur de particule PM10 : {{capteur1.value10}} μg/m³</h2>
+		<h3>capteur de particule PM25 : {{capteur1.value25}} μg/m³</h2>
+		<br>
+	</font>
+	</div>
+	<div class="custom-euro text-center">
+		<h4>VOTRE POSITION GPS</h4>
+	</div>
+	<img class="echelle" src="https://zupimages.net/up/20/18/w7d5.png" />
+	<p style="margin-left: 215px;">en μg/m³</p>
+	<div>
+		<div id="map"></div>
+		
+			<script>
+			var map;
+			var length = '{{length}}';
+			var coords = '{{coords}}';
+			var jcoords = JSON.parse(coords);
+
+			window.alert(jcoords);
+
+			// Creates Map centered on INSA Rennes GPS coordinates
+			function initMap() {
+				map = new google.maps.Map(document.getElementById('map'), {
+				center: {lat: 48.121883, lng: -1.635702},
+				zoom: 14
+				});	
+
+				var contentString = '<h1 id="firstHeading" class="firstHeading">Vous êtes ici</h1>';
+				var infowindow = new google.maps.InfoWindow({
+          			content: contentString
+        		});
+
+				var marker0 = new google.maps.Marker({
+				position: {lat: parseFloat('{{coords[2].lat}}'), lng: parseFloat('{{coords[2].lng}}')},
+				icon:'https://www.zupimages.net/up/20/18/5mch.png',	
+				title: 'Vous êtes ici',				
+				map: map
+			});
+			marker0.addListener('click', function() {
+          		infowindow.open(map, marker0);
+        	});
+			var marker1 = new google.maps.Marker({
+				position: {lat: parseFloat('{{coords[0].lat}}'), lng: parseFloat('{{coords[0].lng}}')},	
+				icon:'https://zupimages.net/up/20/18/1iqi.png',				
+				map: map
+			});
+
+			
+			}
+		</script>
+
+			<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDUBqBVIz2K2vN9D0-Tm9GiZ7-xw8h95C4&callback=initMap" 
+			async defer></script>
+		<div>
+			<a class="btn btn-primary custom-validationfondblanc" href="/add_trajet">Ajouter un trajet</a>
+			<hr>
+			<h3>Votre dernier trajet enregistré :</h3>
+		</div>
+		<table class="table table-striped">
+			<tr>
+				<th>Nom</th>
+				<th>Date</th>
+				<th></th>
+				<th></tr>
+			</tr>
+				<tr>
+					<td><a href="/trajet/{{last.id}}">{{last.name}}</a></td>
+					<td>{{last.date}}</td>
+					<td><a href="/edit_trajet/{{last.id}}" class="btn btn-primary pull-right custom-validationfondblanc">Editer</a></td>
+					<td><a href="/delete_trajet/{{last.id}}" class="btn btn-danger custom-dangerfondblanc">Supprimer</a></td>
+				</tr>
+		</table>
+	</div>
+{% endblock %}

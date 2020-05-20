@@ -1,0 +1,90 @@
+.custom-navbar{
+     /* The image used */
+    background-color: transparent;
+    background-image: url("https://zupimages.net/up/20/18/fh8u.jpg");
+    min-height: 75px;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  min-height: 100px;
+ }
+
+ 
+ 
+ .typo{
+   font-family: 'Tahoma';
+   font-weight: bold;
+   font-style: normal;
+   color: rgb(255, 255, 255);
+ }
+
+
+ .custom-bouton-navbar{
+    border-color: white;
+   background-color: transparent;
+   margin-right: 2vw;
+}
+
+.custom-primary{
+    background-color:transparent;
+    border-color: white;
+    margin-right: 1vw;
+ }
+
+ 
+ .custom-validationfondblanc{
+    background-color: #66A3C5;
+    border-color: white;
+    margin-right: 2vw;
+   
+ }
+
+ .custom-dangerfondblanc{
+    background-color: rgb(226, 54, 41);
+    border-color: white;
+    margin-right: 2vw;
+ }
+
+ .custom-euro{
+   background-color: lightskyblue;
+   color: rgb(255, 255, 255);
+   padding-top: 10px;
+   padding-bottom: 10px;
+   margin-top: 50px;
+   margin-bottom: 50px;
+ }
+
+ .custom-container{
+    padding-top: 120px;
+ }
+
+ .custom-message{
+    /* The image used */
+   background-color: transparent;
+  background-image: url("https://zupimages.net/up/20/18/6b66.jpg");
+   /*min-height: 75px;*/
+
+ /* Center and scale the image nicely */
+ background-position: center;
+ background-repeat: no-repeat;
+ background-size: cover;
+ }
+ .echelle{
+    margin-top: 30px;
+    margin-left: 200px;
+    width: 700px;
+ }
+
+
+
+ .indiceatmo{
+    float: left;
+    width: 700px;
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-top: 20px;
+
+ }

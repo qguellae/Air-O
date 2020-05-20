@@ -1,0 +1,443 @@
+{%extends 'layout.html' %}
+
+{% block body %}
+	<div class="jumbotron text-center custom-message typo">
+		<h2>VOICI VOTRE TRAJET n°{{id}}</h2>
+		<h3>NOM DU TRAJET : {{trajet.name}}</h3>
+	</div>
+	<img class="echelle" src="https://zupimages.net/up/20/18/w7d5.png" />
+	<p style="margin-left: 215px;">en μg/m³</p>
+	<div id="map">
+		<script>
+		var map;
+		var coords = '{{coords}}';
+		var jcoords = JSON.parse(coords);
+		var data = JSON.parse('{{data}}');
+		var colors = '{{colors}}'
+		window.alert(str);
+
+		// Creates Map centered on INSA Rennes GPS coordinates
+		function initMap() {
+			map = new google.maps.Map(document.getElementById('map'), {
+			center: {lat: 48.121883, lng: -1.635702},
+			zoom: 14
+			});	
+
+			//exemple modification couleur en fonction des valeurs de capteur 1
+			
+			
+
+			var marker0 = new google.maps.Marker({
+				position: {lat: parseFloat('{{coords[0].lat}}'), lng: parseFloat('{{coords[0].lng}}')},
+				icon:'{{colors[0]}}',					
+				map: map
+			});
+
+			var marker1 = new google.maps.Marker({
+				position: {lat: parseFloat('{{coords[1].lat}}'), lng: parseFloat('{{coords[1].lng}}')},
+				icon: '{{colors[1]}}',
+				map: map
+			});
+
+			var marker2 = new google.maps.Marker({
+				position: {lat: parseFloat('{{coords[2].lat}}'), lng: parseFloat('{{coords[2].lng}}')},
+				icon: '{{colors[2]}}',
+				map: map
+			});
+
+			var marker3 = new google.maps.Marker({
+				position: {lat: parseFloat('{{coords[3].lat}}'), lng: parseFloat('{{coords[3].lng}}')},
+				icon: '{{colors[3]}}',
+				map: map
+			});
+
+			var marker4 = new google.maps.Marker({
+				position: {lat: parseFloat('{{coords[4].lat}}'), lng: parseFloat('{{coords[4].lng}}')},
+				icon: '{{colors[4]}}',
+				map: map
+			});
+
+			var marker5 = new google.maps.Marker({
+				position: {lat: parseFloat('{{coords[5].lat}}'), lng: parseFloat('{{coords[5].lng}}')},
+				icon: '{{colors[5]}}',
+				map: map
+			});
+
+			var marker6 = new google.maps.Marker({
+				position: {lat: parseFloat('{{coords[6].lat}}'), lng: parseFloat('{{coords[6].lng}}')},
+				icon: '{{colors[6]}}',
+				map: map
+			});
+
+			var marker7 = new google.maps.Marker({
+				position: {lat: parseFloat('{{coords[7].lat}}'), lng: parseFloat('{{coords[7].lng}}')},
+				icon: '{{colors[7]}}',
+				map: map
+			});
+
+			var marker8 = new google.maps.Marker({
+				position: {lat: parseFloat('{{coords[8].lat}}'), lng: parseFloat('{{coords[8].lng}}')},
+				icon: '{{colors[8]}}',
+				map: map
+			});
+
+			var marker9 = new google.maps.Marker({
+				position: {lat: parseFloat('{{coords[9].lat}}'), lng: parseFloat('{{coords[9].lng}}')},
+				icon: '{{colors[9]}}',
+				map: map
+			});
+
+			var marker10 = new google.maps.Marker({
+				position: {lat: parseFloat('{{coords[10].lat}}'), lng: parseFloat('{{coords[10].lng}}')},
+				icon: '{{colors[10]}}',
+				map: map
+			});
+
+			var marker11 = new google.maps.Marker({
+				position: {lat: parseFloat('{{coords[11].lat}}'), lng: parseFloat('{{coords[11].lng}}')},
+				icon: '{{colors[11]}}',
+				map: map
+			});
+
+			var marker12 = new google.maps.Marker({
+				position: {lat: parseFloat('{{coords[12].lat}}'), lng: parseFloat('{{coords[12].lng}}')},
+				icon: '{{colors[4]}}',
+				map: map
+			});
+
+			var marker13 = new google.maps.Marker({
+				position: {lat: parseFloat('{{coords[13].lat}}'), lng: parseFloat('{{coords[13].lng}}')},
+				icon: '{{colors[13]}}',
+				map: map
+			});
+
+			var marker14 = new google.maps.Marker({
+				position: {lat: parseFloat('{{coords[14].lat}}'), lng: parseFloat('{{coords[14].lng}}')},
+				icon: '{{colors[14]}}',
+				map: map
+			});
+
+			var marker15 = new google.maps.Marker({
+				position: {lat: parseFloat('{{coords[15].lat}}'), lng: parseFloat('{{coords[15].lng}}')},
+				icon: '{{colors[15]}}',
+				map: map
+			});
+
+			var marker4 = new google.maps.Marker({
+				position: {lat: parseFloat('{{coords[16].lat}}'), lng: parseFloat('{{coords[16].lng}}')},
+				icon: '{{colors[16]}}',
+				map: map
+			});
+
+			var marker17 = new google.maps.Marker({
+				position: {lat: parseFloat('{{coords[17].lat}}'), lng: parseFloat('{{coords[17].lng}}')},
+				icon: '{{colors[17]}}',
+				map: map
+			});
+
+			var marker18 = new google.maps.Marker({
+				position: {lat: parseFloat('{{coords[18].lat}}'), lng: parseFloat('{{coords[18].lng}}')},
+				icon: '{{colors[18]}}',
+				map: map
+			});
+
+			var marker19 = new google.maps.Marker({
+				position: {lat: parseFloat('{{coords[19].lat}}'), lng: parseFloat('{{coords[19].lng}}')},
+				icon: '{{colors[19]}}',
+				map: map
+			});
+
+			var marker20 = new google.maps.Marker({
+				position: {lat: parseFloat('{{coords[20].lat}}'), lng: parseFloat('{{coords[20].lng}}')},
+				icon: '{{colors[20]}}',
+				map: map
+			});
+
+			var marker21 = new google.maps.Marker({
+				position: {lat: parseFloat('{{coords[21].lat}}'), lng: parseFloat('{{coords[21].lng}}')},
+				icon: '{{colors[21]}}',
+				map: map
+			});
+			var marker22 = new google.maps.Marker({
+				position: {lat: parseFloat('{{coords[22].lat}}'), lng: parseFloat('{{coords[22].lng}}')},
+				icon: '{{colors[22]}}',
+				map: map
+			});
+
+			var marker23 = new google.maps.Marker({
+				position: {lat: parseFloat('{{coords[23].lat}}'), lng: parseFloat('{{coords[23].lng}}')},
+				icon: '{{colors[23]}}',
+				map: map
+			});
+
+			var marker24 = new google.maps.Marker({
+				position: {lat: parseFloat('{{coords[24].lat}}'), lng: parseFloat('{{coords[24].lng}}')},
+				icon: '{{colors[24]}}',
+				map: map
+			});
+
+			var marker25 = new google.maps.Marker({
+				position: {lat: parseFloat('{{coords[25].lat}}'), lng: parseFloat('{{coords[25].lng}}')},
+				icon: '{{colors[25]}}',
+				map: map
+			});
+
+			var marker26 = new google.maps.Marker({
+				position: {lat: parseFloat('{{coords[26].lat}}'), lng: parseFloat('{{coords[26].lng}}')},
+				icon: '{{colors[26]}}',
+				map: map
+			});
+
+			var marker27 = new google.maps.Marker({
+				position: {lat: parseFloat('{{coords[27].lat}}'), lng: parseFloat('{{coords[27].lng}}')},
+				icon: '{{colors[27]}}',
+				map: map
+			});
+
+			var marker28 = new google.maps.Marker({
+				position: {lat: parseFloat('{{coords[28].lat}}'), lng: parseFloat('{{coords[28].lng}}')},
+				icon: '{{colors[28]}}',
+				map: map
+			});
+
+			var marker29 = new google.maps.Marker({
+				position: {lat: parseFloat('{{coords[29].lat}}'), lng: parseFloat('{{coords[29].lng}}')},
+				icon: '{{colors[29]}}',
+				map: map
+			});
+
+			var marker30 = new google.maps.Marker({
+				position: {lat: parseFloat('{{coords[30].lat}}'), lng: parseFloat('{{coords[30].lng}}')},
+				icon: '{{colors[30]}}',
+				map: map
+			});
+
+			var marker31 = new google.maps.Marker({
+				position: {lat: parseFloat('{{coords[31].lat}}'), lng: parseFloat('{{coords[31].lng}}')},
+				icon: '{{colors[31]}}',
+				map: map
+			});
+
+			var marker32 = new google.maps.Marker({
+				position: {lat: parseFloat('{{coords[32].lat}}'), lng: parseFloat('{{coords[32].lng}}')},
+				icon: '{{colors[32]}}',
+				map: map
+			});
+
+			var marker33 = new google.maps.Marker({
+				position: {lat: parseFloat('{{coords[33].lat}}'), lng: parseFloat('{{coords[33].lng}}')},
+				icon: '{{colors[33]}}',
+				map: map
+			});
+
+			var marker34 = new google.maps.Marker({
+				position: {lat: parseFloat('{{coords[34].lat}}'), lng: parseFloat('{{coords[34].lng}}')},
+				icon: '{{colors[34]}}',
+				map: map
+			});
+
+			var marker35 = new google.maps.Marker({
+				position: {lat: parseFloat('{{coords[35].lat}}'), lng: parseFloat('{{coords[35].lng}}')},
+				icon: '{{colors[35]}}',
+				map: map
+			});
+
+			var marker36 = new google.maps.Marker({
+				position: {lat: parseFloat('{{coords[36].lat}}'), lng: parseFloat('{{coords[36].lng}}')},
+				icon: '{{colors[36]}}',
+				map: map
+			});
+
+			var marker37 = new google.maps.Marker({
+				position: {lat: parseFloat('{{coords[37].lat}}'), lng: parseFloat('{{coords[37].lng}}')},
+				icon: '{{colors[37]}}',
+				map: map
+			});
+
+			var marker38 = new google.maps.Marker({
+				position: {lat: parseFloat('{{coords[38].lat}}'), lng: parseFloat('{{coords[38].lng}}')},
+				icon: '{{colors[38]}}',
+				map: map
+			});
+
+			var marker39 = new google.maps.Marker({
+				position: {lat: parseFloat('{{coords[39].lat}}'), lng: parseFloat('{{coords[39].lng}}')},
+				icon: '{{colors[39]}}',
+				map: map
+			});
+
+			var marker40 = new google.maps.Marker({
+				position: {lat: parseFloat('{{coords[40].lat}}'), lng: parseFloat('{{coords[40].lng}}')},
+				icon: '{{colors[40]}}',
+				map: map
+			});
+
+			var marker41 = new google.maps.Marker({
+				position: {lat: parseFloat('{{coords[41].lat}}'), lng: parseFloat('{{coords[41].lng}}')},
+				icon: '{{colors[41]}}',
+				map: map
+			});
+
+			var marker42 = new google.maps.Marker({
+				position: {lat: parseFloat('{{coords[42].lat}}'), lng: parseFloat('{{coords[42].lng}}')},
+				icon: '{{colors[42]}}',
+				map: map
+			});
+
+			var marker43 = new google.maps.Marker({
+				position: {lat: parseFloat('{{coords[43].lat}}'), lng: parseFloat('{{coords[43].lng}}')},
+				icon: '{{colors[43]}}',
+				map: map
+			});
+
+			var marker44 = new google.maps.Marker({
+				position: {lat: parseFloat('{{coords[44].lat}}'), lng: parseFloat('{{coords[44].lng}}')},
+				icon: '{{colors[44]}}',
+				map: map
+			});
+
+			var marker45 = new google.maps.Marker({
+				position: {lat: parseFloat('{{coords[45].lat}}'), lng: parseFloat('{{coords[45].lng}}')},
+				icon: '{{colors[45]}}',
+				map: map
+			});
+
+			var marker46 = new google.maps.Marker({
+				position: {lat: parseFloat('{{coords[46].lat}}'), lng: parseFloat('{{coords[46].lng}}')},
+				icon: '{{colors[46]}}',
+				map: map
+			});
+
+			var marker47 = new google.maps.Marker({
+				position: {lat: parseFloat('{{coords[47].lat}}'), lng: parseFloat('{{coords[47].lng}}')},
+				icon: '{{colors[47]}}',
+				map: map
+			});
+
+			var marker48 = new google.maps.Marker({
+				position: {lat: parseFloat('{{coords[48].lat}}'), lng: parseFloat('{{coords[48].lng}}')},
+				icon: '{{colors[48]}}',
+				map: map
+			});
+
+			var marker49 = new google.maps.Marker({
+				position: {lat: parseFloat('{{coords[49].lat}}'), lng: parseFloat('{{coords[49].lng}}')},
+				icon: '{{colors[49]}}',
+				map: map
+			});
+
+			var marker50 = new google.maps.Marker({
+				position: {lat: parseFloat('{{coords[50].lat}}'), lng: parseFloat('{{coords[50].lng}}')},
+				icon: '{{colors[50]}}',
+				map: map
+			});
+
+			var marker51 = new google.maps.Marker({
+				position: {lat: parseFloat('{{coords[51].lat}}'), lng: parseFloat('{{coords[51].lng}}')},
+				icon: '{{colors[51]}}',
+				map: map
+			});
+
+			var marker52 = new google.maps.Marker({
+				position: {lat: parseFloat('{{coords[52].lat}}'), lng: parseFloat('{{coords[52].lng}}')},
+				icon: '{{colors[52]}}',
+				map: map
+			});
+
+			var marker53 = new google.maps.Marker({
+				position: {lat: parseFloat('{{coords[53].lat}}'), lng: parseFloat('{{coords[53].lng}}')},
+				icon: '{{colors[53]}}',
+				map: map
+			});
+
+			var marker54 = new google.maps.Marker({
+				position: {lat: parseFloat('{{coords[54].lat}}'), lng: parseFloat('{{coords[54].lng}}')},
+				icon: '{{colors[54]}}',
+				map: map
+			});
+
+			var marker55 = new google.maps.Marker({
+				position: {lat: parseFloat('{{coords[55].lat}}'), lng: parseFloat('{{coords[55].lng}}')},
+				icon: '{{colors[55]}}',
+				map: map
+			});
+
+			var marker56 = new google.maps.Marker({
+				position: {lat: parseFloat('{{coords[56].lat}}'), lng: parseFloat('{{coords[56].lng}}')},
+				icon: '{{colors[56]}}',
+				map: map
+			});
+
+			var marker57 = new google.maps.Marker({
+				position: {lat: parseFloat('{{coords[57].lat}}'), lng: parseFloat('{{coords[57].lng}}')},
+				icon: '{{colors[57]}}',
+				map: map
+			});
+
+			var marker58 = new google.maps.Marker({
+				position: {lat: parseFloat('{{coords[58].lat}}'), lng: parseFloat('{{coords[58].lng}}')},
+				icon: '{{colors[58]}}',
+				map: map
+			});
+
+			var marker59 = new google.maps.Marker({
+				position: {lat: parseFloat('{{coords[59].lat}}'), lng: parseFloat('{{coords[59].lng}}')},
+				icon: '{{colors[59]}}',
+				map: map
+			});
+
+			var marker60 = new google.maps.Marker({
+				position: {lat: parseFloat('{{coords[60].lat}}'), lng: parseFloat('{{coords[60].lng}}')},
+				icon: '{{colors[60]}}',
+				map: map
+			});
+
+			var marker61 = new google.maps.Marker({
+				position: {lat: parseFloat('{{coords[61].lat}}'), lng: parseFloat('{{coords[61].lng}}')},
+				icon: '{{colors[61]}}',
+				map: map
+			});
+
+			var marker62 = new google.maps.Marker({
+				position: {lat: parseFloat('{{coords[62].lat}}'), lng: parseFloat('{{coords[62].lng}}')},
+				icon: '{{colors[62]}}',
+				map: map
+			});
+
+			var marker63 = new google.maps.Marker({
+				position: {lat: parseFloat('{{coords[63].lat}}'), lng: parseFloat('{{coords[63].lng}}')},
+				icon: '{{colors[63]}}',
+				map: map
+			});
+
+			var marker64 = new google.maps.Marker({
+				position: {lat: parseFloat('{{coords[64].lat}}'), lng: parseFloat('{{coords[64].lng}}')},
+				icon: '{{colors[64]}}',
+				map: map
+			});
+
+		
+		}
+	</script>
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDUBqBVIz2K2vN9D0-Tm9GiZ7-xw8h95C4&callback=initMap"
+		async defer></script>
+	</div>
+	<div>
+		<br>
+		<h3>Changer de trajet :</h3>
+		<div>
+			<table class="table tabl-striped">
+				<tr>
+					<th>Nom</th>
+					<th>Date</th>
+				</tr>
+				{% for trajet in trajets %}
+					<tr>
+						<td><a href="/trajet/{{trajet.id}}">{{trajet.name}}</a></td>
+						<td>{{trajet.date}}</td>
+					</tr>
+				{% endfor %}
+			</table>
+		</ul>
+	</div>
+{% endblock %}

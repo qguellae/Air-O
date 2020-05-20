@@ -1,0 +1,31 @@
+{%extends 'layout.html' %}
+
+{% block body %}
+	<div class="jumbotron text-center custom-message typo">
+		<h1>Mes trajets récents</h1>
+	</div>
+	<div>
+		<a class="btn btn-primary custom-validationfondblanc" href="/add_trajet">Ajouter un trajet</a>
+		<hr>
+	</div>
+	<div>
+		<table class="table tabl-striped">
+			<tr>
+				<th>ID</th>
+				<th>Nom</th>
+				<th>Date d'enregistrement du trajet</th>
+				<th></tr>
+				<th></th>
+			</tr>
+			{% for trajet in trajets %}
+				<tr>
+					<td>{{trajet.id}}</td>
+					<td><a href="/trajet/{{trajet.id}}">{{trajet.name}}</a></td>
+					<td>{{trajet.date}}</td>
+					<td><a href="/edit_trajet/{{trajet.id}}" class="btn btn-primary custom-validationfondblanc pull-right">Editer</a></td>
+					<td><a href="/delete_trajet/{{trajet.id}}" class="btn btn-danger custom-dangerfondblanc">Supprimer</a></td>
+				</tr>
+			{% endfor %}
+		</table>
+	</div>
+{% endblock %}

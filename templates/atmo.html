@@ -1,0 +1,33 @@
+{%extends 'layout.html' %}
+
+{% block body %}
+	<div class="jumbotron text-center typo custom-message">
+		<h2>VOTRE INDICE : 6</h2>
+		<p>Basé sur la mesure du 05/05/2020 à 14:49</p>
+	</div>
+
+	<div class="text-center custom-primary">
+		<h3><font color="#9D7D76"><br />MAIS JAMY, C'EST QUOI L'INDICE ATMO?</font></h3>
+	</div>
+	<div class="text-center custom-primary">
+		<h8><br />L'indice atmo c'est un indice allant de 0 à 10, il est calculé pour 4 polluants, et l'indice ATMO final, c'est celui qui correspond au sous indice le plus élevé des 4 polluants considérés.
+			Tu peux facilement comprendre en regardant le tableau suivant :<br /></h8>
+	</div>
+	
+	<img class="indiceatmo" alt="non disponible" src="https://zupimages.net/up/20/18/yldh.png" />
+	<div class="text-center custom-primary">
+
+		<h3><font color="#9D7D76"><br /><br /><br />ET DANS LE PROJET AIR'O?</font></h3>
+	</div>
+	<div class="text-center custom-primary">
+		<h8><br />Pour notre projet, nous captons les données des particules PM10 et PM2.5 toutes les 5 secondes, nous avons donc fait notre propre tableau de calcul d'indice. Chaque indice a une couleur qui lui est associée: <br /></h8>
+	</div>
+
+	<img class="indiceatmo" alt="non disponible" src="https://zupimages.net/up/20/18/u9te.png"/>
+
+	<div class="text-center custom-primary">
+		<h8><br /> Tu peux retrouver ces indices couleurs sur tes trajets, en cliquant sur l'onglet "Dashboard" ou en cliquant sur "Air'o"<br /></h8>
+</div>
+	<div>
+	</div>
+{% endblock %}

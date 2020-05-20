@@ -1,0 +1,76 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+  <style>
+    .slidecontainer {
+  width: 100%; /* Width of the outside container */
+}
+
+.slidecontainer .right {float : right}
+
+/* The slider itself */
+.slider {
+  -webkit-appearance: none;  /* Override default CSS styles */
+  appearance: none;
+  width: 100%; /* Full-width */
+  height: 25px; /* Specified height */
+  background: #d3d3d3; /* Grey background */
+  outline: none; /* Remove outline */
+  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+  transition: opacity .2s;
+}
+
+/* Mouse-over effects */
+.slider:hover {
+  opacity: 1; /* Fully shown on mouse-over */
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  background: #4CAF50; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
+
+.slider::-moz-range-thumb {
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  background: #4CAF50; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
+
+.image-fixed {position:fixed;}
+
+
+  </style>
+  <h1 style="text-align:center">Modifiez votre trajet</h1>
+  {% from "includes/_formhelpers.html" import render_field %}
+  <form action="" method="POST">
+    <div class="form-group">
+      <label>Nouveau nom du trajet</label>
+      {{ render_field(form.name, class_="form-control") }}
+    </div>
+    <h2>Choisissez la plage de données à afficher</h2>
+    <div class="slidecontainer">
+      <span class="font-weight-bold">14:10</span>
+      <span class="font-weight-bold right">14:50</span>
+      <input type="range" min="10" max="50" value="10" class="slider" id="myRange">
+      <h3>Plage sélectionnée : de 14:10 à 14:<span id="demo"></span></h3>
+      <script>
+        var slider = document.getElementById("myRange");
+        var output = document.getElementById("demo");
+        output.innerHTML = slider.value; // Display the default slider value
+
+        // Update the current slider value (each time you drag the slider handle)
+        slider.oninput = function() {
+          output.innerHTML = this.value;
+        }
+      </script>
+    </div>
+    <button type="submit" class="btn btn-primary">Modifier</button>   
+  </form>
+{% endblock %}
